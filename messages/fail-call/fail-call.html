@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <section padding class="section-faill">
+    <dater-card-circle-large
+        [icon]="'assets/icons/misc/call-icon.svg'"
+        [imgUrl]="imgUrl">
+    </dater-card-circle-large>
+
+    <h2 text-center>{{title}}</h2>
+    <p text-center>{{message}}</p>
+
+    <dater-button-square
+        (tapEvent)=closeModal($event)
+        [width]='"medium"'
+        [position]='"center"'
+        [text]="textOnButton">
+    </dater-button-square>
+  </section>
+</div>

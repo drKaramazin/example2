@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="posr wrapper">
+    <div class="bg"></div>
+      <div class="base" padding>
+        <dater-card-circle-large
+            [icon]="emojiUrl"
+            [title]="title"
+            [imgUrl]="imgUrl">
+        </dater-card-circle-large>
+
+        <div padding text-center>
+          <small class="text-mutted" *ngIf="gender === 'female'" [translate]="'goodbye.subtitle.female'" [translateParams]="{name: userName}"></small>
+          <small class="text-mutted" *ngIf="gender === 'male'" [translate]="'goodbye.subtitle.male'" [translateParams]="{name: userName}"></small>
+        </div>
+
+      </div>
+      <div class="clearfix"></div>
+
+      <div class="wrapper-button">
+        <dater-button-square
+            [width]='"half"'
+            [position]='"center"'
+            (tapEvent)='goToChat($event)'
+            [text]="'goodbye.button-text' | translate">
+        </dater-button-square>
+        <div class="clearfix"></div>
+      </div>
+  </div>
+</ion-content>

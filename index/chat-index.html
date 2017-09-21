@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+
+      <div class="py-4">
+            <span class="text active">
+              {{'stats.statistic.messages.title'|translate}}
+            </span>
+        <span class="badge">
+              <dater-notify-badge [number]="totalUnreadMessagesCount" class="feedback-badge"></dater-notify-badge>
+            </span>
+      </div>
+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <dater-chat-empty *ngIf="countChatItems === 0 && chats && chats.length === 0"></dater-chat-empty>
+  <dater-chat-loading *ngIf="countChatItems > 0 && !chats" [countList]="countChatItems"></dater-chat-loading>
+  <ion-list>
+    <dater-chat-item
+      *ngFor="let chat of chats"
+      [imgUrl]="chat.imgUrl"
+      [isLastMessage]="chat.isLastMessage"
+      [title]="chat.title"
+      [message]="chat.lastPhrase"
+      [countUnread]="chat.unreadMessagesCount"
+      [chatId]="chat.$key"
+      (onLeave)="leaveChat($event)"
+      (onEnter)="openChatMessages($event, chat)">
+    </dater-chat-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer no-border>
+  <dater-chat-input (onSend)="onCreateDialog($event)" [placeholder]="'Диалог с'"></dater-chat-input>
+</ion-footer>

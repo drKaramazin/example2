@@ -1,0 +1,60 @@
+<div class="posr">
+    <dater-chat-more-menu class="dater-chat-more-menu"></dater-chat-more-menu>
+</div>
+
+<ion-header>
+    <ion-navbar>
+        <ion-title  class="posr">
+            <img *ngIf="chatProfile?.mainPhoto?.size150x150 && chat" class="imageheader" [src]="chatProfile?.mainPhoto?.size150x150">
+            <div *ngIf="chat">
+                <h2>
+                    {{chatProfile?.title}}
+                </h2>
+            </div>
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content [ngClass]="{'hide-mb': showDislikeButton}">
+    <div *ngIf="chatId" class="messages-workflow" padding>
+        <div *ngFor="let message of chat | async | daterReverseArray; let i = index">
+
+          <div *ngIf=" i == chatLenght -1 && chatProfileLoaded">
+                <dater-start-chat-avatar
+                    [showButtonsCall]='!showDislikeButton ? true : false'
+                    [chatProfile]='chatProfile'>
+                </dater-start-chat-avatar>
+            </div>
+
+
+            <dater-chat-message
+                [phrase]="message.phrase"
+                [sender]="message.sender"
+                [read]="message.isRead"
+                [timestamp]="message.timestamp">
+            </dater-chat-message>
+        </div>
+    </div>
+
+    <div *ngIf="!chatId && chatProfile?.mainPhoto?.size200x200" class="wrapper-content">
+        <dater-start-chat-avatar
+            [chatProfile]="chatProfile">
+        </dater-start-chat-avatar>
+    </div>
+
+    <div class="posr">
+        <dater-like-dislike
+          *ngIf="!showEmoji && showDislikeButton"
+          (sendMesage)="wantsToSendMessages()" (dislike)="dislike()"></dater-like-dislike>
+    </div>
+
+</ion-content>
+
+<ion-footer no-border *ngIf="!showDislikeButton">
+    <div class="posr">
+        <dater-emoji
+          (deleteChatAndSendEmoji)="deleteChatAndSendEmoji($event)"
+           (closeEmodji)="closeEmodj()" *ngIf="showEmoji"></dater-emoji>
+    </div>
+    <dater-chat-input (onSend)="onSend($event)"></dater-chat-input>
+</ion-footer>

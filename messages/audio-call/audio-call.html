@@ -1,0 +1,29 @@
+<ion-content>
+<section [ngStyle]="{'background-image': 'url('+ userInterlocutor.mainPhoto.size600x800 +')'}">
+
+    <div class="bg posr">
+
+        <div class="wrapper">
+            <h2 class="welcome-text white">{{userInterlocutor.profile.welcomeText}}</h2>
+            <dater-user-name-age-distance class="white" [user]="userInterlocutor"></dater-user-name-age-distance>
+            <div class="clearfix"></div>
+            <div class="drop-call mt-8 posr">
+                <div id="popup-toggle" (click)="closeModal()">
+                    <div class="circlephone"></div>
+                    <div class="circle-fill"></div>
+                    <div class="img-circle">
+                        <div class="img-circleblock"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</section>
+
+</ion-content>
+

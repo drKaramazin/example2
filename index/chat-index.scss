@@ -1,0 +1,45 @@
+dater-chat-index {
+
+  .scroll-content {
+    overflow-y: auto;
+    margin-bottom: 0;
+    padding: 0 !important;
+  }
+
+  ion-title {
+    .text {
+      color: $grey20;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+  }
+
+  .badge {
+    color: $white;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 45px;
+    margin-left: 5px;
+    dater-notify-badge {
+      position: relative;
+      top: -5px;
+      border-radius: 12px;
+      padding: 2px 7px;
+      font-size: 12px;
+    }
+    .notify-badge {
+      top: -5px;
+      left: 0;
+
+    }
+  }
+
+  .content {
+    background-color: $bg-content
+  }
+
+  .text.active {
+    color: $black;
+  }
+
+}

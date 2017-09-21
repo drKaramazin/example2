@@ -1,0 +1,53 @@
+dater-chat-messages {
+  ion-title {
+    min-height: 56px;
+  }
+  .imageheader {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    left: -10px;
+  }
+
+  h2 {
+    padding-left: 35px;
+    margin: 0;
+    padding-right: 15px;
+    white-space: normal;
+  }
+
+
+
+  .header-md::after {
+    background: none;
+  }
+
+  .toolbar-background-md {
+    border: none;
+    background: transparent;
+  }
+
+  .content {
+    background-color: $bg-content;
+  }
+
+  .messages-workflow {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  dater-like-dislike .wrapper-button {
+    bottom: 0px;
+  }
+
+  .hide-mb {
+    .scroll-content {
+      margin-bottom: 0 !important;
+    }
+  }
+
+}

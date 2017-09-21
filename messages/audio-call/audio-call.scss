@@ -1,0 +1,163 @@
+dater-audio-call {
+
+  .circlephone,
+  .circle-fill,
+  .img-circle,
+  .img-circleblock {
+    transform-origin: center
+  }
+
+
+  section {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .bg {
+      width: 100%;
+      height: 100%;
+      background-color:  $grey40;
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 60vh;
+      width: 100vw;
+      text-align: center;
+    }
+    .welcome-text {
+      text-align: center;
+    }
+  }
+
+  #popup-toggle {
+    position: relative;
+    width: 175px;
+    height: 100px;
+    display: block;
+    margin: auto;
+
+  }
+  .img-circle {
+    box-sizing: content-box;
+  }
+  .circlephone {
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    border: 2px solid $white;
+    width: 150px;
+    height: 150px;
+    bottom: -25px;
+    right: 10px;
+    position: absolute;
+    border-radius: 100%;
+    opacity: .5;
+    animation: circle-anim 1.2s infinite ease-in-out !important;
+    transition: all 0.5s;
+  }
+  .circle-fill {
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    background-color: $white;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    right: 35px;
+    position: absolute;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    animation: circle-fill-anim 1.2s infinite ease-in-out;
+    transition: all 0.5s;
+  }
+  .img-circle {
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    width: 72px;
+    height: 72px;
+    bottom: 14px;
+    right: 49px;
+    position: absolute;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    opacity: .7;
+  }
+  .img-circleblock {
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    width: 72px;
+    height: 80px;
+    background-image: url('/assets/icons/misc/icon-drop-call.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation-name: tossing;
+    -webkit-animation-name: tossing;
+    animation-duration: .5s;
+    -webkit-animation-duration: .5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+  }
+  .img-circle:hover {
+    opacity: 1;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  }
+  @keyframes tossing {
+    0% {
+      transform: rotate(-8deg);
+    }
+    50% {
+      transform: rotate(8deg);
+    }
+    100% {
+      transform: rotate(-8deg);
+    }
+  }
+  @keyframes circle-anim {
+    0% {
+      transform: rotate(0deg) scale(0.5) skew(1deg);
+      opacity: .1;
+    }
+    30% {
+      transform: rotate(0deg) scale(0.7) skew(1deg);
+      opacity: .5;
+    }
+    100% {
+      transform: rotate(0deg) scale(1) skew(1deg);
+      opacity: .1;
+    }
+  }
+  @keyframes circle-fill-anim {
+    0% {
+      transform: rotate(0deg) scale(0.7) skew(1deg);
+      opacity: .2;
+    }
+    50% {
+      transform: rotate(0deg) scale(1) skew(1deg);
+      opacity: .2;
+    }
+    100% {
+      transform: rotate(0deg) scale(0.7) skew(1deg);
+      opacity: .2;
+    }
+  }
+
+}
